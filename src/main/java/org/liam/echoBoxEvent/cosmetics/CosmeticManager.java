@@ -555,8 +555,8 @@ public class CosmeticManager {
     public static void DragonBreathStorm(Player player) {
         new BukkitRunnable() {
             int ticks = 0;
-            final int stormDuration = 80;  // Duration of the storm in ticks
-            double radius = 2.5;      // Radius of the vortex
+            final int stormDuration = 80;
+            double radius = 2.5;
             final Location startLocation = player.getLocation().add(0, 1.5, 0);
 
             @Override
@@ -574,7 +574,6 @@ public class CosmeticManager {
                     player.getWorld().spawnParticle(Particle.FLAME, playerLocation.clone().add(x, ticks * 0.1, z), 0);
                     player.getWorld().spawnParticle(Particle.SMOKE_LARGE, playerLocation.clone().add(x, ticks * 0.1, z), 0);
 
-                    // Sparks of energy inside the vortex (CRIT and FIREWORK_SPARK)
                     for (int i = 0; i < 3; i++) {
                         double sparkX = (Math.random() - 0.5) * 2;
                         double sparkZ = (Math.random() - 0.5) * 2;
@@ -582,14 +581,12 @@ public class CosmeticManager {
                         player.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, playerLocation.clone().add(sparkX, ticks * 0.05, sparkZ), 0);
                     }
 
-                    // Gradually increase the radius of the vortex for more dramatic effect
                     if (ticks % 10 == 0 && radius < 4) {
                         radius += 0.2;
                     }
 
                     ticks++;
                 } else {
-                    // Final Explosion with burst of fire and smoke
                     Location finalLocation = player.getLocation().add(0, 1.5, 0);
 
                     for (int i = 0; i < 100; i++) {
@@ -602,10 +599,10 @@ public class CosmeticManager {
                         player.getWorld().spawnParticle(Particle.SMOKE_LARGE, finalLocation.clone().add(x, 0, z), 0);
                     }
 
-                    this.cancel(); // End the storm after explosion
+                    this.cancel();
                 }
             }
-        }.runTaskTimer(Main.getPluginInstance(), 0L, 1L); // Runs every tick (1L delay)
+        }.runTaskTimer(Main.getPluginInstance(), 0L, 1L);
     }
 
     public static void DetailedHeartShape(Player player) {
