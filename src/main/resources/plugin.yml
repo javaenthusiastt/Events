@@ -1,0 +1,35 @@
+name: EchoBoxEvent
+version: '1.1.2-SNAPSHOT'
+main: org.liam.echoBoxEvent.Main
+api-version: '1.20'
+author: sorryplspls
+description: Events plugin made for Echobox.
+softdepend: [Essentials, PlaceholderAPI, LuckPerms]
+
+#custom-api-version: '1.20'
+
+commands:
+  eventinfo:
+    aliases: [eventversion]
+  event:
+    aliases: [events, echoboxevents, hostevent]
+    description: Start a hosted event
+  eventadmin:
+    description: Event commands for admins
+  joinevent:
+    aliases: [join, eventjoin]
+    description: Joins a active event
+  leaveevent:
+    aliases: [leave, eventleave]
+    description: Leaves a active event
+  echoboxsumo:
+    description: Sumo Event
+  echoboxspleef:
+    description: Spleef Event
+  echoboxmurdermystery:
+    description: Murder Mystery Event
+  eventstats:
+    aliases: [myeventstats]
+  eventcosmetics:
+  eventstore:
+  echoboxglassbridge:
